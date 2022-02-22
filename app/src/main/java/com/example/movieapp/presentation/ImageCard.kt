@@ -17,13 +17,10 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
-import com.example.movieapp.Screen
 
 /**
- * Image Card
+ * Image Card composable
  */
-
 @ExperimentalMaterialApi
 @Composable
 fun ImageCard(
@@ -37,7 +34,7 @@ fun ImageCard(
         shape = RoundedCornerShape(15.dp),
         elevation = 5.dp,
 
-    ) {
+        ) {
         Box(modifier = Modifier.height(500.dp)) {
             Image(
                 painter = painter,

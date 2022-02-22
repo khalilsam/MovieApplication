@@ -18,19 +18,24 @@ import com.example.movieapp.Screen
 
 import com.example.movieapp.data.MovieApi
 
+/**
+ * List screen composable
+ */
 @ExperimentalMaterialApi
 @Composable
 fun MainScreen(navController: NavController) {
     val viewModel: MovieViewModel = hiltViewModel()
     val movieCollection = viewModel.state.value.movieCollection
-    if (movieCollection!=null) {
+    if (movieCollection != null) {
         LazyColumn {
             items(movieCollection.results) { movie ->
                 val painter = rememberImagePainter(MovieApi.IMAGE_BASE_URL + movie.poster_path)
-                Column(modifier = Modifier.padding(16.dp).clickable {
-                    navController.navigate(Screen.DetailsScreen.withArg(movie.id))
+                Column(modifier = Modifier
+                    .padding(16.dp)
+                    .clickable {
+                        navController.navigate(Screen.DetailsScreen.withArg(movie.id))
 
-                }) {
+                    }) {
                     ImageCard(
                         painter = painter,
                         contentDescription = movie.title,

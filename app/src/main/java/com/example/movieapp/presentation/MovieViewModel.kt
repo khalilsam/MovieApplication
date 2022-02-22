@@ -12,6 +12,9 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+/**
+ * Movie List View Model
+ */
 @HiltViewModel
 class MovieViewModel @Inject constructor(
     private val repository: MovieRepository
@@ -20,14 +23,10 @@ class MovieViewModel @Inject constructor(
     private val _state = mutableStateOf(MovieListState())
     val state: State<MovieListState> = _state
 
-
-
     data class MovieListState(
         val movieCollection: MovieCollection? = null,
         val isLoading: Boolean = false
     )
-
-
 
     init {
         getMoviesList()
@@ -36,7 +35,6 @@ class MovieViewModel @Inject constructor(
     fun getMoviesList() {
         viewModelScope.launch {
             try {
-
                 _state.value = state.value.copy(isLoading = true)
                 _state.value = state.value.copy(
                     movieCollection = repository.getMoviesList(),
@@ -47,6 +45,5 @@ class MovieViewModel @Inject constructor(
             }
         }
     }
-
 
 }

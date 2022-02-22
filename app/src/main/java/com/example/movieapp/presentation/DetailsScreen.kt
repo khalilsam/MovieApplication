@@ -14,7 +14,9 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.rememberImagePainter
 import com.example.movieapp.data.MovieApi
 
-
+/**
+ * Details screen composable
+ */
 @ExperimentalMaterialApi
 @Composable
 fun DetailsScreen(id: Int?) {

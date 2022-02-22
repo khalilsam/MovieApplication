@@ -9,6 +9,9 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.movieapp.Screen
 
+/**
+ * Navigation composable
+ */
 @ExperimentalMaterialApi
 @Composable
 fun Navigation() {

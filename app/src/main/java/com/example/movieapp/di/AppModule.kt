@@ -17,6 +17,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
 
+/**
+ * Dependency injction
+ */
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
@@ -26,11 +29,12 @@ object AppModule {
     fun provideMovieRepository(
         api: MovieApi
     ) = MovieRepository(api)
+
     @Provides
     @Singleton
     fun provideMovieApi(): MovieApi {
         //Logging interceptor
-         val interceptor = run {
+        val interceptor = run {
             val httpLoggingInterceptor = HttpLoggingInterceptor()
             httpLoggingInterceptor.apply {
                 httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY

@@ -5,6 +5,10 @@ import com.example.movieapp.data.MovieApi
 import com.example.movieapp.data.MovieCollection
 import dagger.hilt.android.scopes.ActivityScoped
 import javax.inject.Inject
+
+/**
+ * Movie Repository
+ */
 @ActivityScoped
 class MovieRepository  @Inject constructor(
 private val api:MovieApi

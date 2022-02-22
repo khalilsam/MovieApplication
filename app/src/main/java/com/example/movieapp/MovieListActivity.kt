@@ -35,6 +35,9 @@ import com.example.movieapp.presentation.Navigation
 import com.example.movieapp.ui.theme.MovieAPPTheme
 import dagger.hilt.android.AndroidEntryPoint
 
+/**
+ * Movie Activity
+ */
 @ExperimentalMaterialApi
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {

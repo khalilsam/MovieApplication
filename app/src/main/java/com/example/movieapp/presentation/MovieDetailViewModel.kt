@@ -5,12 +5,14 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.movieapp.data.Movie
-import com.example.movieapp.data.MovieApi
 import com.example.movieapp.repository.MovieRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+/**
+ * Movie details ViewModel
+ */
 @HiltViewModel
 class MovieDetailViewModel @Inject constructor(
     private val repository: MovieRepository
