@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -16,13 +17,15 @@ import com.example.movieapp.data.MovieApi
 
 @ExperimentalMaterialApi
 @Composable
-fun DetailsScreen(id: Int?){
+fun DetailsScreen(id: Int?) {
     val viewModel: MovieDetailViewModel = hiltViewModel()
-    viewModel.getMovie(id)
-    val movie = viewModel.movieState.value.movie
-    Column(modifier = Modifier.padding(16.dp)) {
+    LaunchedEffect(key1 = true) {
+        viewModel.getMovie(id)
+    }
 
-            val painter = rememberImagePainter(MovieApi.IMAGE_BASE_URL + movie?.poster_path)
+    Column(modifier = Modifier.padding(16.dp)) {
+        val movie = viewModel.movieState.value.movie
+        val painter = rememberImagePainter(MovieApi.IMAGE_BASE_URL + movie?.poster_path)
 
         if (movie != null) {
             ImageCard(
@@ -32,8 +35,8 @@ fun DetailsScreen(id: Int?){
                 date = movie.release_date
             )
             Spacer(modifier = Modifier.height(16.dp))
-            
-            Text(text = movie.overview , modifier = Modifier.padding(16.dp))
+
+            Text(text = movie.overview, modifier = Modifier.padding(16.dp))
         }
 
     }
