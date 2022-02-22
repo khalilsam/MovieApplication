@@ -56,22 +56,22 @@ fun ImageCard(
                     )
             )
 
-            Box(
+
+            Row(
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(12.dp),
-                contentAlignment = Alignment.BottomStart
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.Bottom
             ) {
-                Text(text = title, style = TextStyle(color = Color.White, fontSize = 16.sp))
-            }
-            Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(12.dp),
-                contentAlignment = Alignment.BottomEnd
-            ) {
+                Text(
+                    text = title,
+                    style = TextStyle(color = Color.White, fontSize = 16.sp),
+                    modifier = Modifier.fillMaxWidth(0.75f)
+                )
                 Text(text = date, style = TextStyle(color = Color.White, fontSize = 16.sp))
             }
+
         }
 
 
