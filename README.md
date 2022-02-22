@@ -1,6 +1,6 @@
 # MovieApplication
 
-Movie application is a demo app composed from tow screens the first is fir listing movies and the second is fo showing selected movie details. 
+Movie application is a demo app composed from tow screens the first is for listing movies and the second is for showing selected movie details. 
 
 It's build based on the following technologies:
 
